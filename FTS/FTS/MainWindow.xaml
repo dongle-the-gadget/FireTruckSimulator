@@ -1,0 +1,34 @@
+﻿<Window x:Class="FTS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FTS"
+        mc:Ignorable="d"
+        Title="Fire truck simulator" Height="514" Width="659"
+        ResizeMode="CanMinimize"
+        Loaded="Window_Loaded"
+        SourceInitialized="Window_SourceInitialized" Icon="Assets/icons/icon.ico">
+    <Grid Name="MainGrid">
+
+        <Image Width="643" Height="475" Stretch="Fill" Source="Assets\props\hightway.bmp"/>
+        <Image Height="200" Name="FireTruck" Source="Assets/units/animate/firetruck1.png" Margin="110,142,-110,143"/>
+        <TextBlock TextAlignment="Center" VerticalAlignment="Top" Text="00:30" Name="timerText" FontSize="25" Foreground="#FF8D9AFD" HorizontalAlignment="Stretch" Grid.ColumnSpan="2"/>
+        <Grid Background="Black" Name="CoverOver" Visibility="Collapsed">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image MouseDown="NewGameBtn_MouseDown" Name="NewGameBtn2" MouseEnter="NewGameBtn2_MouseEnter" MouseLeave="NewGameBtn2_MouseLeave" Source="Assets/buttons/BtTryAgain.bmp" Width="100" Margin="0,0,0,20"/>
+                <Image Name="FullScreenM2" MouseEnter="FullScreenM_MouseEnter" MouseLeave="FullScreenM_MouseLeave" MouseDown="FullScreenM_MouseDown" Source="Assets/buttons/BtFullscreenOff.bmp" Width="100" Margin="0,0,0,20"/>
+                <Image Name="Quiz" MouseEnter="Quiz_MouseEnter" MouseDown="Quiz_MouseDown" MouseLeave="Quiz_MouseLeave" Source="Assets/buttons/BtExit.bmp" Width="100"/>
+            </StackPanel>
+        </Grid>
+        <Grid Background="Black" Name="Cover">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image MouseDown="NewGameBtn_MouseDown" Name="NewGameBtn" MouseEnter="NewGameBtn_MouseEnter" MouseLeave="NewGameBtn_MouseLeave" Source="Assets/buttons/BtNewGame.bmp" Width="100" Margin="0,0,0,20"/>
+                <Image Name="FullScreenM" MouseEnter="FullScreenM_MouseEnter" MouseLeave="FullScreenM_MouseLeave" MouseDown="FullScreenM_MouseDown" Source="Assets/buttons/BtFullscreenOff.bmp" Width="100" Margin="0,0,0,20"/>
+                <Image MouseEnter="Quiz_MouseEnter" MouseDown="Quiz_MouseDown" MouseLeave="Quiz_MouseLeave" Source="Assets/buttons/BtExit.bmp" Width="100"/>
+            </StackPanel>
+        </Grid>
+
+        <Image Name="BSOD" Stretch="Fill" Source="Assets\fakebsod.png" Visibility="Collapsed"/>
+    </Grid>
+</Window>
